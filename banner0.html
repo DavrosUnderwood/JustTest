@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexagon Mall Logo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .logo-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hexagon {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 20px;
+        }
+
+        .hexagon:before,
+        .hexagon:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            border-left: 75px solid transparent;
+            border-right: 75px solid transparent;
+        }
+
+        .hexagon:before {
+            top: -43.3px;
+            border-bottom: 43.3px solid #ffcc00;
+        }
+
+        .hexagon:after {
+            bottom: -43.3px;
+            border-top: 43.3px solid #ffcc00;
+        }
+
+        .hexagon-inner {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border: red 10px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            overflow: hidden;
+        }
+
+        .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5em;
+            text-align: center;
+            color: #ffcc00;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="hexagon">
+            <div class="hexagon-inner"></div>
+            <div class="text">Hexagon Mall</div>
+        </div>
+    </div>
+</body>
+</html>
